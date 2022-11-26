@@ -1,7 +1,7 @@
 const web3 = require("@solana/web3.js");
 
 let connection = new web3.Connection(web3.clusterApiUrl('mainnet-beta'), 'confirmed');
-const addy = '7HCwHnjDJDjc5s8s9c43Rd1q6PFf9URKUXksT2ZM4Yxq'; 
+const addy = '<INSERT_ADDRESS>'; 
 const TOKEN_PROGRAM_ID = 'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA';
 
 console.log('connected to mainnet :)')
@@ -10,8 +10,6 @@ console.log('connected to mainnet :)')
 async function getStuff() {
     let slot = await connection.getSlot();
     console.log('getting latest slot... which is', {slot});
-
-
     let blockTime = await connection.getBlockTime(slot);
     console.log('getting latest block.... which is: ',{blockTime});
 }
